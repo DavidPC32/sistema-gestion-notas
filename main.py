@@ -23,15 +23,14 @@ def registrar_estudiante():
         "notas": [],       # Lista vacía para agregar notas después
         "promedio": 0.0    # Valor inicial (será calculado en otra rama)
     }
-    
     ESTUDIANTES_DB.append(nuevo_estudiante)
     print(f"✅ Estudiante '{nombre}' registrado con éxito.")
 
 def registrar_nota():
     """Busca un estudiante y agrega una nota a su lista interna."""
     nombre = input("Ingrese nombre del estudiante para registrar nota: ")
-    estudiante = buscar_estudiante(nombre) # Busca el diccionario
-
+    estudiante = buscar_estudiante(nombre)
+    
     if estudiante:
         try:
             nota = float(input(f"Ingrese nota para {nombre} (1.0 - 5.0): "))
